@@ -1,5 +1,7 @@
 export type Mission = {
+  id: number;
   name: string;
+  destination: string;
   departure: Date;
   members: Member[];
 };

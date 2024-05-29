@@ -35,15 +35,19 @@ const passengerB = {
 };
 
 const missionA = {
+  id: 1,
   name: "Expedition 2024",
+  destination: "Mars Alpha-116",
   departure: new Date("01-01-2024"),
-  members: [pilotA, engineerA, passengerA, passengerB]
+  members: [pilotA, engineerA, passengerA, passengerB],
 };
 
 const missionB = {
+  id: 2,
   name: "Expedition 2025",
+  destination: "Mars Alpha-118",
   departure: new Date("01-01-2025"),
-  members: [pilotB, engineerA, engineerB, passengerA,],
+  members: [pilotB, engineerA, engineerB, passengerA],
 };
 
 export const missions = [missionA, missionB] as Mission[];

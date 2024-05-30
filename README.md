@@ -1,30 +1,23 @@
-# React + TypeScript + Vite
+# Journey Orchestrator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Tech stack
+- React + Typescript
+- Vite development server and tooling
+- Redux for state management
+- Cypress for e2e testing
+- Vercel for CICD and hosting
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Run the app
+```bash
+npm install
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### State management 
+The data is mocked in a static file. It is managed through a Redux store and persisted in local storage. If you wish to clean up your changes and start from scratch, please clean your local storage from your browser console running `localStorage.clear()`.
+
+### Testing
+TODO
+
+### Deployment
+TODO

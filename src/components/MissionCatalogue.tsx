@@ -1,8 +1,10 @@
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import { useMissionStore } from "../stores/MissionStore";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import moment from "moment";
 import "./missionStyles.css";
+import { ModeEdit } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 function MissionCatalogue() {
   const { missions } = useMissionStore();
@@ -13,6 +15,19 @@ function MissionCatalogue() {
     { field: "members", headerName: "Members", flex: 1 },
     { field: "destination", headerName: "Destination", flex: 1 },
     { field: "departure", headerName: "Departure", flex: 1 },
+    {
+      field: "actions",
+      headerName: "",
+      flex: 1,
+      sortable: false,
+      filterable: false,
+      hideable: false,
+      renderCell: (params) => (
+        <IconButton component={Link} to={"mission/" + params.id}>
+          <ModeEdit />
+        </IconButton>
+      ),
+    },
   ];
   const rows = missions.map((m) => ({
     ...m,
@@ -24,7 +39,9 @@ function MissionCatalogue() {
     <>
       <div className="title-bar">
         <h1>Mission catalogue</h1>
-        <Button variant="contained">New mission</Button>
+        <Button variant="contained" component={Link} to="mission">
+          New mission
+        </Button>
       </div>
       <DataGrid
         rows={rows}

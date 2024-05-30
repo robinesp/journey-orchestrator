@@ -1,27 +1,26 @@
 export type Mission = {
-  id: number;
+  id: string;
   name: string;
   destination: string;
   departure: Date;
   members: Member[];
 };
 
-export type Job = "Navigation" | "Solar panels" | "Maintenance" | "Mechanics";
+export const MEMBER_TYPES = ["Pilot", "Engineer", "Passenger"] as const;
+export type MemberType = (typeof MEMBER_TYPES)[number];
+
+export const JOB_TYPES = [
+  "Navigation",
+  "Solar panels",
+  "Maintenance",
+  "Mechanics",
+] as const;
+export type Job = (typeof JOB_TYPES)[number];
 
 export type Member = {
-  name: string;
-};
-
-export type Pilot = Member & {
-  experience: string;
-};
-
-export type Engineer = Member & {
-  experience: string;
-  job: Job;
-};
-
-export type Passenger = Member & {
-  age: number;
-  wealth: number;
+  type: MemberType;
+  experience?: number;
+  job?: Job;
+  age?: number;
+  wealth?: number;
 };

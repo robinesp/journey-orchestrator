@@ -3,3 +3,40 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.mission-details,
+.member {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 20px;
+}
+
+.mission-details > * {
+  flex-grow: 1;
+}
+
+.member > *:not(button) {
+  width: 30%;
+}
+
+.mission-members {
+  background-color: #ededed;
+  border-radius: 16px;
+  padding: 8px 2rem;
+  text-align: left;
+
+  .MuiSelect-select,
+  .MuiInputBase-input {
+    background-color: white;
+  }
+}
+
+.button-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 16px;
+}

@@ -38,3 +38,5 @@ npm run cy:run # to run all e2e tests in the terminal
 
 The app is deployed using Vercel and available at: https://journey-orchestrator.vercel.app/.
 Commits to the main branch trigger a production deployment, while commits on all other branches trigger preview deployments.
+
+A Github action is implemented to run the Cypress tests on every push to the repository.

@@ -157,7 +157,7 @@ function MissionView() {
       {mission ? (
         <div>
           <div className="title-bar">
-            <h1>{mission.name ? "Edit mission" : "Create new mission"}</h1>
+            <h1>{id ? "Edit mission" : "Create new mission"}</h1>
           </div>
           <Box component="form" autoComplete="off">
             <div className="mission-details">
@@ -207,16 +207,24 @@ function MissionView() {
                   createNewMember={createNewMember}
                 />
               ))}
-              <Button startIcon={<Add />} onClick={addNewMember}>
+              <Button
+                startIcon={<Add />}
+                onClick={addNewMember}
+                data-cy="add-member"
+              >
                 Add member
               </Button>
             </div>
           </Box>
           <div className="button-bar">
-            <Button variant="outlined" component={Link} to="/">
+            <Button variant="outlined" component={Link} to="/" data-cy="cancel">
               Cancel
             </Button>
-            <Button variant="contained" onClick={saveMission}>
+            <Button
+              variant="contained"
+              onClick={saveMission}
+              data-cy="save-mission"
+            >
               Save mission
             </Button>
           </div>

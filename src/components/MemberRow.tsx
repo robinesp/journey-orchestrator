@@ -58,6 +58,7 @@ function MemberRow({
             label="Type"
             name="type"
             onChange={memberChangeHandler}
+            data-cy="job-select"
           >
             {MEMBER_TYPES.map((t) => (
               <MenuItem key={t} value={t}>

@@ -39,7 +39,12 @@ function MissionCatalogue() {
     <>
       <div className="title-bar">
         <h1>Mission catalogue</h1>
-        <Button variant="contained" component={Link} to="mission">
+        <Button
+          variant="contained"
+          component={Link}
+          to="mission"
+          data-cy="create-mission"
+        >
           New mission
         </Button>
       </div>
